@@ -38,7 +38,7 @@ Color operator+(Color a, Color b) {
 }
 
 Vec3 operator-(Vec3 v) {
-    return {-v.x, -v.y, -v.z};
+    return { -v.x, -v.y, -v.z };
 }
 
 struct Sphere {
@@ -56,15 +56,15 @@ struct Light {
 };
 
 Vec3 vec_sub(Vec3 a, Vec3 b) {
-    return {a.x - b.x, a.y - b.y, a.z - b.z};
+    return { a.x - b.x, a.y - b.y, a.z - b.z };
 }
 
 Vec3 vec_add(Vec3 a, Vec3 b) {
-    return {a.x + b.x, a.y + b.y, a.z + b.z};
+    return { a.x + b.x, a.y + b.y, a.z + b.z };
 }
 
 Vec3 vec_scale(Vec3 v, float t) {
-    return {v.x * t, v.y * t, v.z * t};
+    return { v.x * t, v.y * t, v.z * t };
 }
 
 float dot(Vec3 a, Vec3 b) {
@@ -77,14 +77,14 @@ float length(Vec3 v) {
 
 Vec3 normalize(Vec3 v) {
     float l = length(v);
-    return {v.x / l, v.y / l, v.z / l};
+    return { v.x / l, v.y / l, v.z / l };
 }
 
 Vec3 reflect_ray(Vec3 R, Vec3 N) {
     return vec_sub(vec_scale(N, 2.0f * dot(N, R)), R);
 }
 
-vector<Color> image(width * height);
+vector<Color> image(width* height);
 
 void put_pixel(int x, int y, Color color) {
     int px = x + width / 2;
@@ -106,14 +106,14 @@ pair<float, float> intersect_ray(Vec3 O, Vec3 D, Sphere s) {
     float disc = b * b - 4 * a * c;
 
     if (disc < 0)
-        return {inf, inf};
+        return { inf, inf };
 
     float root = sqrt(disc);
 
     float t1 = (-b - root) / (2 * a);
     float t2 = (-b + root) / (2 * a);
 
-    return {t1, t2};
+    return { t1, t2 };
 }
 
 pair<Sphere*, float> closest_intersection(
@@ -140,7 +140,7 @@ pair<Sphere*, float> closest_intersection(
         }
     }
 
-    return {closest_sphere, closest_t};
+    return { closest_sphere, closest_t };
 }
 
 float ComputeLighting(
@@ -163,7 +163,8 @@ float ComputeLighting(
         if (light.type == LIGHT_TYPE::point) {
             L = vec_sub(light.position, P);
             t_max = 1.0f;
-        } else {
+        }
+        else {
             L = light.direction;
             t_max = inf;
         }
@@ -177,7 +178,7 @@ float ComputeLighting(
 
         if (n_dot_l > 0) {
             intensity += light.intensity * n_dot_l /
-                         (length(N) * length(L));
+                (length(N) * length(L));
         }
     }
 
@@ -199,7 +200,7 @@ Color trace_ray(
     float closest_t = res.second;
 
     if (closest == nullptr)
-        return {0, 0, 0};
+        return { 0, 0, 0 };
 
     Vec3 P = vec_add(O, vec_scale(D, closest_t));
     Vec3 N = normalize(vec_sub(P, closest->center));
@@ -238,7 +239,7 @@ Vec3 canvas_to_viewport(int x, int y) {
 }
 
 int main() {
-    Vec3 camera = {0, 0, 0};
+    Vec3 camera = { 0, 0, 0 };
 
     vector<Sphere> spheres = {
         {{0, -1, 3}, 1, {255, 0, 0}, 0.2f},
