@@ -22,7 +22,7 @@ This project is being developed incrementally to explore the fundamentals of 3D 
 
 ## Demo
 
-https://github.com/user-attachments/assets/87d114ca-1931-4fd4-b260-bd910b24cd84
+https://github.com/user-attachments/assets/46bdbb87-da1d-48a4-bc92-a291c88eadaa
 
 ## Built With
 
