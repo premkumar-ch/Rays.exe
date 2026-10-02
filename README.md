@@ -19,11 +19,10 @@ This project is being developed incrementally to explore the fundamentals of 3D 
 * `W` / `S` — Move forward / backward
 * `A` / `D` — Move left / right
 * `Mouse` — Look around
-* `ESC` — Exit
 
 ## Demo
 
-[Watch the interactive ray tracer demo](https://github.com/premkumar-ch/Rays.exe/issues/1#issue-5681783057)
+https://github.com/user-attachments/assets/87d114ca-1931-4fd4-b260-bd910b24cd84
 
 ## Built With
 
@@ -31,15 +30,3 @@ This project is being developed incrementally to explore the fundamentals of 3D 
 * SDL3
 * Visual Studio 2022
 
-## Roadmap
-
-* Triangle rendering
-* OBJ mesh loading
-* Textures
-* Materials
-* Multithreaded rendering
-* BVH acceleration
-
-## Purpose
-
-This is a learning project focused on understanding how a renderer works from the ground up before moving toward GPU-based graphics APIs.
